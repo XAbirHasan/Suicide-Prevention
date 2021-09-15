@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- loading static files -->
+{% load static %}
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/index.css' %}" rel="stylesheet">
+	<link href="{% static 'css/team.css' %}" rel="stylesheet">
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Merriweather:wght@300&family=Squada+One&family=ZCOOL+KuaiLe&display=swap"
+		rel="stylesheet">
+
+	<!-- font-awesome v6 -->
+	<link href="{% static 'Fontawesome_pro_v6/css/all.css' %}" rel="stylesheet">
+
+	<title>Suicide Prediction</title>
+	<link rel="icon" href="{% static 'img/logo.png' %}" type="image/gif" sizes="16x16">
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="header">
+
+				<div class="navbar">
+
+					<div class="nav-holder">
+
+						<ul class="main-ul">
+
+							<li class="main-li" id="project_main_li"><a href="" onclick="return false;">Project</a>
+
+								<ul class="sub-ul" id="project_sub_li">
+									<li class="sub-li"><a href="/about">About</a></li>
+									<li class="sub-li"><a href="/result">Result</a></li>
+									<li class="sub-li"><a href="/dataset">Dataset</a></li>
+								</ul>
+
+							</li>
+
+							<li class="main-li" id="model_main_li"><a href="" onclick="return false;">Model</a>
+
+								<ul class="sub-ul" id="model_sub_li">
+									<li class="sub-li"><a href="/api">API</a></li>
+									<li class="sub-li"><a href="/test">Test</a></li>
+								</ul>
+
+							</li>
+
+							<li class="main-li" disabled style="pointer-events: none;"><i disabled
+									href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></li>
+							<li class="main-li selected-main-li"><a href="/team">Team</a></li>
+							<li class="main-li"><a href="/contact">Contacts</a></li>
+						</ul>
+
+					</div>
+
+					<div class="logo-sec" id="logo_sec">
+						<img src="{% static 'img/logo.png' %}" alt="logo" />
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div class="teaminfo-holder container-fluid">
+
+				<div class="teaminfo-row row">
+
+					<div class="team-title">
+						<div class="title-only">Team Info</div>
+					</div>
+
+
+					<!-- Md. Saddam Hossain -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/saddam sir.jpg' %}" alt="Dr. Saddam Hossain" />
+								</div>
+								<div class="des-holder-right col-md-6 col-lg-6">
+
+									<div class="des">
+
+										<div class="extra-title" style="margin-top:10px;margin-bottom:-7px;">Supervisor
+										</div>
+										<div class="name" style="margin-top:0px;">Dr. Saddam Hossain</div>
+										<div class="quotes">&ldquo;The most beautiful thing you can wear is confidence.&rdquo;</div>
+
+										<div class="other-info">
+											Assistant Professor <br>
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											saddam@cse.uiu.ac.bd<br>
+											contact:+8801719-898989
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="separator-info-div"></div>
+
+					<!-- Md. Abir Hassan -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+
+								<div class="des-holder-left col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Md. Abir Hassan</div>
+
+										<div class="quotes">&ldquo;Every soul shall taste death (al-imran 3:185)&rdquo;
+										</div>
+
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											mhassan171146@bscse.uiu.ac.bd<br>
+											contact:+8801521-207879
+										</div>
+									</div>
+								</div>
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/abir.jpg' %}" alt="Md. Abir Hassan" />
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="separator-info-div"></div>
+
+					<!-- Md. Arafat Hossain -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/arafat.jpg' %}" alt="Md. Arafat Hossain" />
+								</div>
+								<div class="des-holder-right col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Md. Arafat Hossain</div>
+										<div class="quotes">&ldquo;Faith in Allah changes everything&rdquo;</div>
+
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											mhossain171158@bscse.uiu.ac.bd<br>
+											contact:+8801719-898989
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="separator-info-div"></div>
+
+					<!-- Sumaiya begum -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+
+								<div class="des-holder-left col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Sumaiya begum</div>
+										<div class="quotes">&ldquo;Try to enjoy every moment of your life&rdquo;</div>
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											sbegum171141@bscse.uiu.ac.bd<br>
+											contact:+8801719-898989
+										</div>
+									</div>
+								</div>
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/sumaiya.jpg' %}" alt="Sumaiya begum" />
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="separator-info-div"></div>
+
+					<!-- Sharmin ara karim -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/kotha.jpg' %}" alt="Sharmin ara karim" />
+								</div>
+								<div class="des-holder-right col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Sharmin ara karim</div>
+										<div class="quotes">&ldquo;Be good and spread happiness&rdquo;</div>
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											skarim171151@bscse.uiu.ac.bd<br>
+											contact:+8801719-898989
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="separator-info-div"></div>
+
+					<!-- Aditi prasad paul -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+
+								<div class="des-holder-left col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Aditi prasad paul</div>
+										<div class="quotes">&ldquo;You only live once, but if you do it right, once is
+											enough&rdquo;</div>
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											apaul171161@bscse.uiu.ac.bd<br>
+											contact:+8801716-743291
+										</div>
+									</div>
+								</div>
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src="{% static 'img/aditi.jpeg' %}" alt="Aditi prasad paul" />
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+
+					<div class="separator-info-div"></div>
+
+					<!-- Zinia Sharmin -->
+					<div class="team-info-img-holder">
+						<div class="container">
+							<div class="row">
+								<div class="img-holder col-md-6 col-lg-6">
+									<img src={% static 'img/zinia.jpg' %} alt="Zinia Sharmin" />
+								</div>
+								<div class="des-holder-right col-md-6 col-lg-6">
+
+									<div class="des">
+										<div class="name">Zinia Sharmin</div>
+										<div class="quotes">&ldquo;In order to write about life first you must live it&rdquo;</div>
+										<div class="other-info">
+											Computer science engineering<br>
+											United International University<br>
+											Dhaka, Bangladesh<br>
+											mhossain171158@bscse.uiu.ac.bd<br>
+											contact:+8801719-898989
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- <div class="separator-info-div"></div> -->
+
+
+
+
+				</div>
+
+			</div>
+
+
+			<div class="container-fluid about-part-container">
+				<div class="row about-part-row">
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title"><img src="{% static 'img/logo.png' %}" alt=""
+									height="27px" />&nbsp;Suicide
+								Prediction</div>
+
+							<div class="about-des">
+								There are many variations of passages of Lorem Ipsum available, but the majority have
+								suffered alteration in some form, by injected humour, or randomised words which don't
+								look even slightly believable.
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title"><i class="fas fa-info-circle"></i>Informations</div>
+
+							<div class="information-des">
+								<a href=""><i class="fad fa-circle-notch"></i>&nbsp;Terms & Conditions</a>
+							</div>
+
+							<div class="information-des">
+								<a href=""><i class="fad fa-circle-notch"></i>&nbsp;Privacy Policy</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title contact-title"><i class="fas fa-address-book"></i>Contacts</div>
+
+							<div class="contact-des">
+								<i class="fas fa-map-marked-alt"></i>&nbsp;<div class="des-only">Address: United City,
+									Madani Avenue, Badda, Dhaka - 1212, Bangladesh</div>
+							</div>
+
+							<div class="contact-des">
+								<i class="fas fa-phone-square-alt fass"></i>&nbsp;<div class="des-only">Phone:
+									+8801756663521</div>
+							</div>
+
+							<div class="contact-des">
+								<i class="fas fa-envelope fass"></i>&nbsp;<div class="des-only">Email: example@gmail.com
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+			</div>
+
+			<div class="copyright-holder">
+				<div class="copyright-box">
+					Copyright ©2021 All rights reserved
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="{% static 'script/jquery-3.5.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/sweetalert.min.js' %}"></script>
+
+	<!-- JavaScript custom-->
+	<script type="text/javascript" src="{% static 'script/only-navbar.js' %}"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			$("#logo_sec").on("click", function (e) {
+
+				window.location = "/";
+
+			});
+
+		});
+
+	</script>
+
+	<!-- 
+    <script>
+		//prevent source code view
+		$(document).bind("contextmenu",function(e) {
+			e.preventDefault();
+		});
+		document.onkeydown = function (e) {
+			if (event.keyCode == 123) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+				return false;
+			}
+		}
+	</script> 
+	-->
+
+</body>
+
+</html>

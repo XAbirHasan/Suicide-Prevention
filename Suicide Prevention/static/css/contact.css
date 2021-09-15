@@ -1,0 +1,439 @@
+.full-body{
+	
+	/* border:1px solid red; */
+	height:100vh;
+	overflow:hidden;
+	
+	z-index:1;
+}
+
+.full-body .row{
+	
+	/* border:1px solid blue; */
+	height:100%;
+	/* overflow:hidden; */
+}
+
+.moving_back{
+	position:absolute;
+	/* border:1px solid aqua; */
+	height:100%;
+	width:100%;
+	/* background: url(../img/contact.jpeg) no-repeat center center / cover; */
+	/* background:red; */
+	/* overflow:hidden; */
+	overflow:hidden;
+	/* transform:Scale(1); */
+	/* transition:all 10s; */
+	/* backdrop-filter:10; */
+	z-index:-1;
+	
+}
+
+.moving_back img{
+	
+	height:100%;
+	width:100%;
+	
+	
+	transform:Scale(1);
+	transition:all 10s;
+	/* opacity:0.8; */
+	object-fit:cover;
+	
+}
+
+
+
+
+/* contact making........................................ */
+.contact-holder{
+	
+	margin-top:2vh;
+	/* border:1px solid green; */
+	height:88.3vh;
+	width:100%;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	
+	/* background:white; */
+}
+
+.contact-holder .contact-bar{
+	
+	border-top:2px solid #7C00FF;
+	border-left:2px solid #7C00FF;
+	
+	border-bottom:2px solid #B1005D;
+	border-right:2px solid #B1005D;
+	
+	border-radius:0px 25px 0px 25px;
+	
+	padding:20px;
+	/* display:flex; */
+	/* justify-content:center; */
+	/* align-items:center; */
+	/* background:darkblue; */
+	font-family: 'Merriweather', serif;
+	
+	backdrop-filter:blur(7px);
+	color:white;
+	
+	max-width:570px;
+}
+
+
+.contact-holder .contact-bar .tittle-plate{
+	
+	/* border:1px solid red; */
+	width:100%;
+	font-size:50px;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	font-family: 'Mate SC', serif;
+	
+	color:white;
+	/* line-height:3rem; */
+}
+
+
+.contact-holder .contact-bar .tittle-describe{
+	
+	/* border:1px solid red; */
+	width:100%;
+	font-size:25px;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	margin-bottom:10px;
+	color:rgba(255,255,255,0.8);
+	
+	/* width:510px; */
+}
+
+
+.contact-holder .contact-bar .description-contact{
+	
+	/* border:1px solid white; */
+	width:100%;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	padding:4px;
+}
+
+
+.contact-holder .contact-bar .description-contact .contact-info{
+	
+	border:2px solid rgba(255,255,255,0.2);
+	width:100%;
+	
+	margin:5px;
+	padding:8px;
+	
+	border-radius:0px 10px 0px 10px;
+	/* display:flex; */
+	/* justify-content:center; */
+	/* align-items:center; */
+	transition:all 1s;
+}
+
+
+.contact-holder .contact-bar .description-contact .contact-info:hover{
+	
+	/* background:rgba(255,255,255,1); */
+	border:2px solid rgba(255,255,255,0.8);
+	background:rgba(0,0,0,0.7);
+	
+	/* border-radius:10px 10px 10px 10px; */
+	border-radius:0px 20px 0px 20px;
+}
+
+
+.contact-holder .contact-bar .description-contact .contact-info .con-icon{
+	
+	/* border:1px solid red; */
+	width:100%;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	font-size:20px;
+}
+
+.contact-holder .contact-bar .description-contact .contact-info .con-text{
+	
+	/* border:1px solid red; */
+	width:100%;
+	
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	
+	font-size:16px;
+	margin-top:4px;
+
+}
+
+
+.contact-holder .contact-bar .description-contact .contact-info .con-text a{
+	
+	color:rgba(0,209,255,1);
+}
+
+.contact-holder .contact-bar .description-contact .contact-info .con-text a:hover{
+	
+	/* color:#B1005D; */
+	text-decoration:none;
+}
+
+
+@media only screen and (max-width: 580px) {
+	
+	
+	.contact-holder .contact-bar{
+	
+		border-top:2px solid #7C00FF;
+		border-left:2px solid #7C00FF;
+		border-bottom:2px solid #B1005D;
+		border-right:2px solid #B1005D;
+		border-radius:0px 25px 0px 25px;
+		padding:15px;
+		font-family: 'Merriweather', serif;
+		backdrop-filter:blur(7px);
+		color:white;
+		max-width:400px;
+	}
+
+	.contact-holder .contact-bar .tittle-plate{
+		
+		width:100%;
+		font-size:45px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		text-align: center;
+		font-family: 'Mate SC', serif;
+		color:white;
+	}
+
+	.contact-holder .contact-bar .tittle-describe{
+		
+		width:100%;
+		font-size:16px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		text-align: center;
+		margin-bottom:10px;
+		color:rgba(255,255,255,0.8);
+		/* width:350px; */
+		/* border:1px solid red; */
+	}
+
+	.contact-holder .contact-bar .description-contact{
+		
+		width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		padding:4px;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info{
+		
+		border:2px solid rgba(255,255,255,0.2);
+		width:100%;
+		margin:5px;
+		padding:8px;
+		border-radius:0px 10px 0px 10px;
+		transition:all 1s;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info:hover{
+		
+		border:2px solid rgba(255,255,255,0.8);
+		background:rgba(0,0,0,0.7);
+		border-radius:0px 20px 0px 20px;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-icon{
+		
+		width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		font-size:18px;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text{
+		
+		width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		font-size:14px;
+		margin-top:4px;
+
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text a{
+		
+		color:rgba(0,209,255,1);
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text a:hover{
+		
+		text-decoration:none;
+	}
+
+	
+}
+
+
+@media only screen and (max-width: 410px) {
+	
+	
+	.contact-holder .contact-bar{
+	
+		border-top:2px solid #7C00FF;
+		border-left:2px solid #7C00FF;
+		border-bottom:2px solid #B1005D;
+		border-right:2px solid #B1005D;
+		border-radius:0px 25px 0px 25px;
+		padding:15px;
+		font-family: 'Merriweather', serif;
+		backdrop-filter:blur(7px);
+		color:white;
+		max-width:auto;
+	}
+
+	.contact-holder .contact-bar .tittle-plate{
+		
+		width:100%;
+		font-size:25px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		text-align: center;
+		font-family: 'Mate SC', serif;
+		color:white;
+	}
+
+	.contact-holder .contact-bar .tittle-describe{
+		
+		width:100%;
+		font-size:13px;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		text-align: center;
+		margin-bottom:10px;
+		color:rgba(255,255,255,0.8);
+		/* width:350px; */
+		/* border:1px solid red; */
+	}
+
+	.contact-holder .contact-bar .description-contact{
+		
+		width:100%;
+		display:block;
+		/* justify-content:center; */
+		/* align-items:center; */
+		padding:5px 10px;
+		/* border:1px solid white; */
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info{
+		
+		border:2px solid rgba(255,255,255,0.2);
+		width:auto;
+		
+		margin:6px;
+		padding:10px 5px;
+		
+		border-radius:3px;
+		transition:all 1s;
+		/* border:1px solid red; */
+		/* display:block; */
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info:hover{
+		
+		border:2px solid rgba(255,255,255,0.8);
+		background:rgba(0,0,0,0.7);
+		border-radius:3px 20px 3px 3px;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-icon{
+		
+		width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		font-size:18px;
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text{
+		
+		width:100%;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		font-size:12px;
+		margin-top:4px;
+
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text a{
+		
+		color:rgba(0,209,255,1);
+	}
+
+	.contact-holder .contact-bar .description-contact .contact-info .con-text a:hover{
+		
+		text-decoration:none;
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

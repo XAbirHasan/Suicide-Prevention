@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/result.css' %}" rel="stylesheet">
+	<link href="{% static 'css/result_graph.css' %}" rel="stylesheet">
+
+	<link
+		href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;family=Playfair+Display:wght@400;700&amp;display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Merriweather:wght@300&family=Squada+One&family=ZCOOL+KuaiLe&display=swap"
+		rel="stylesheet">
+
+
+	<!-- font-awesome v6 -->
+	<link href="{% static 'Fontawesome_pro_v6/css/all.css' %}" rel="stylesheet">
+
+	<title>Suicide Prediction</title>
+	<link rel="icon" href="{% static 'img/logo.png' %}" type="image/gif" sizes="16x16">
+
+</head>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+
+			<div class="header">
+
+				<div class="navbar">
+
+					<div class="nav-holder">
+
+						<ul class="main-ul">
+
+							<li class="main-li selected-main-li" id="project_main_li"><a href="" onclick="return false;">Project</a>
+
+								<ul class="sub-ul" id="project_sub_li">
+									<li class="sub-li"><a href="/about">About</a></li>
+									<li class="sub-li"><a href="/result" class="selected-sub-li">Result</a></li>
+									<li class="sub-li"><a href="/dataset">Dataset</a></li>
+								</ul>
+
+							</li>
+
+							<li class="main-li" id="model_main_li"><a href="" onclick="return false;" >Model</a>
+
+								<ul class="sub-ul" id="model_sub_li">
+									<li class="sub-li"><a href="/api">API</a></li>
+									<li class="sub-li"><a href="/test">Test</a></li>
+								</ul>
+
+							</li>
+
+							<li class="main-li" disabled style="pointer-events: none;"><i disabled
+									href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i></li>
+							<li class="main-li"><a href="/team">Team</a></li>
+							<li class="main-li"><a href="/contact">Contacts</a></li>
+						</ul>
+
+					</div>
+
+					<div class="logo-sec" id="logo_sec">
+						<img src="{% static 'img/logo.png' %}" alt="logo" />
+					</div>
+
+				</div>
+
+
+			</div>
+
+
+
+			<div class="main-body container-fluid">
+				<div class="row">
+
+					<div class="word-cloud-holder">
+
+						<div class="word-cloud-title">
+							<div class="word-cloud-button" id="word_cloud_button"><span id="word_cloud_text">Word
+									Cloud</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="word_cloud_icon"></i>
+							</div>
+
+							<div class="pointer-holder" id="hand_pointer">
+								<div class="hand-pointer">
+									<img src="{% static 'img/handpointer.png' %}" alt="" />
+									<div class="hand-pointer-text">Click to expand</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="word-cloud-tab-holder" id="word_cloud_tab_holder">
+							<div class="cloud-tab-holder-child">
+								<div class="word-cloud-tab selected-word-tab" id="user_status_button">User Status</div>
+								<div class="word-cloud-tab" id="bangla_article_button">Bangla articles</div>
+								<div class="word-cloud-tab" id="english_article_button">English articles</div>
+							</div>
+						</div>
+
+						<div class="img-slider-holder" id="image_slider_holder">
+							<div class="slider-parent-support">
+								<div class="slider-parent-support-2">
+									<div class="slide-parent" id="slider_parent">
+
+										<div class="slide-page">
+											<div class="container-fluid">
+												<div class="row">
+
+													<div class="img-holder col-sm-12 col-md-9 col-lg-9">
+														<img id="word_cloud_img_1" src="{% static 'img/word cloud.png' %}" alt="word cloud" />
+													</div>
+													<div class="word-cloud-des col-sm-12 col-md-3 col-lg-3 ">
+
+														This figure represents the wordcloud of user status who commits suicide. From the figure we can see that most of the suicidal acts take place due to uncertainty. When people feel insecure and lonely, they feel disappointed. Some of them cannot hold their emotion and the end results is uncertain suicide. We collect some data which was written by the victims before their suicide. 
+														<br>
+														From those data using wordcloud we find out `আমার', `আমি', ` আমাকে', `আমাদের' are the mostly used words which imply possessiveness, uncertainty and insecurity. Some other words are `কিন্তু', `সাথে', `না', `করতে', `মা', `কেউ', `হয়তো' etc. 
+														<br>
+														All these words help to explain their emotional arrogance and thought before being committing suicide.
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<div class="slide-page">
+											<div class="container-fluid">
+												<div class="row">
+
+													<div class="img-holder col-sm-12 col-md-9 col-lg-9">
+														<img src="{% static 'img/bangla article.png' %}"
+															alt="word cloud" />
+													</div>
+													<div class="word-cloud-des col-sm-12 col-md-3 col-lg-3">
+
+														This figure represents the wordcloud of Bangla News articles. We can see some highlighted words which are used most frequently in the Bangla News articles. We collect those articles to gather information about suicide committers'. 
+														<br>
+														Most newspapers use the following words to publish a suicidal news, `আত্মহত্যা করেছেন', `উপজেলা', `লাশ উদধার', `গলায় ফাঁস', `থানার ওসি', `ময়নাতদন্ত' etc. 
+														<br>
+														All these words help us to find more suicidal data and understand the reason of suicide. Beside that, these data also help us to collect some other information. (i.e. temperature and weather of that day, gratitude and longitude of the area, suicide time etc.)
+
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<div class="slide-page">
+											<div class="container-fluid">
+												<div class="row">
+
+													<div class="img-holder col-sm-12 col-md-9 col-lg-9">
+														<img src="{% static 'img/english article.png' %}"
+															alt="word cloud" />
+													</div>
+													<div class="word-cloud-des col-sm-12 col-md-3 col-lg-3">
+
+														This figure  represents the wordcloud of English News articles. As like Bangla articles we also collect english news articles. We can see some highlighted words which are used most frequently in the English News articles. 
+														<br>
+														We collect those articles to gather information about suicide committers'. From those data using wordcloud we find out most commonly use words to publish a suicidal news are, `committed suicide', `police station', `officer charge', `said', `house', `wife', `upazilla', `village', `mother', `later', `family', `night' etc. 
+														<br>
+														All these words help us to find more suicidal data, understand the reason of suicide, suicide time etc.
+
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+										<!-- <div class="slide-page"> -->
+										<!-- <img src="img/bangla article.png" alt="bangla article"/> -->
+										<!-- </div> -->
+
+										<!-- <div class="slide-page"> -->
+										<!-- <img src="img/english article.png" alt="english article"/> -->
+										<!-- </div> -->
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- <div class="arrow-icon"> -->
+						<!-- <i class="fad fa-arrow-alt-circle-down"  id="last_word_cloud_icon"></i> -->
+						<!-- </div> -->
+
+
+					</div>
+
+
+					<div class="graph-holder">
+
+						<div class="graph-title">
+							<div class="main-text">Graph Results</div>
+						</div>
+
+						<!-- Different reasons of suicide graph -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="reason_button"><span>Different reasons of
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="reason_icon"></i>
+							</div>
+						</div>
+
+						<div class="reason-graph-holder-x" id="reason_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="only-graph" id="reason_graph"></div>
+										</div>
+
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3" id="reason_text">
+											This figure represents different major reasons of committing suicide. From the figure, we observe that family reason contributes the maximum number of fatality (i.e., 292 persons) where addiction causes the lowest (i.e., 6 persons). 
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="graph-holder">
+						<!-- Different methods of suicide graph -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="method_button"><span>Different methods of
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="method_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="method_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="only-graph" id="method_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents different major method of committing suicide. 
+											<br>
+											From the figure, we observe that hanging contributes the maximum number of fatality (i.e., 546 persons) where taking injection and electric shock causes the lowest (i.e., 1 person).
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="graph-holder">
+						<!-- Different Area(Division) of suicide graph -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="division_button"><span>Different Area(Division) of
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="division_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="division_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="only-graph" id="division_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents the number of suicidal cases according to area (division). 
+											<br>
+											From the figure, Rajshahi division has a higher suicide rate than the other divisions (i.e., 138 persons). Where the frequency of Sylhet division has a lower number of suicidal cases(i.e., 56 persons). It also shows that the frequency of Dhaka (i.e., 136 persons) and Chattagram (i.e., 115 persons) region has higher number of suicidal cases.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="graph-holder">
+						<!-- Different District of suicide graph -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="district_button"><span>Different District of
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="district_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="district_graph_desc">
+							<div class="reason-graph-holder-child-dis">
+
+								<div class="district-tabs-holder">
+
+									<div class="district-tab selected-district-tab" id="dhaka_button">Dhaka</div>
+									<div class="district-tab" id="rajshahi_button">Rajshahi</div>
+									<div class="district-tab" id="khulna_button">Khulna</div>
+									<div class="district-tab" id="barisal_button">Barisal</div>
+									<div class="district-tab" id="chattagram_button">Chattagram</div>
+									<div class="district-tab" id="mymensingh_button">Mymensingh</div>
+									<div class="district-tab" id="rangpur_button">Rangpur</div>
+									<div class="district-tab" id="sylhet_button">Sylhet</div>
+
+								</div>
+
+								<div class="district-slider-holder" id="district_slider_holder">
+									<div class="district-slide-parent" id="district_slider_parent">
+										
+										<!-- Dhaka -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="dhaka_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Dhaka Division. From the figure, Dhaka district has a higher suicide rate than the other districts (i.e., 27 persons). Where the frequency of Kishoreganj district has the lowest suicidal cases(i.e., 2 persons).
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Rajshahi -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="rajshahi_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Rajshahi Division. From the figure, Bogura district has a higher suicide rate than the other districts (i.e., 30 persons). Where the frequency of Chapainawabganj district has the lowest (i.e., 1 persons) suicide rate. Besides Rajshahi (i.e., 29 persons) gets the 2nd position. Natore and Pabna (i.e., 20 persons) are in the 3rd position.
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- Khulna -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="khulna_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Khulna Division. From the figure, Jessore district has a higher suicide rate than the other districts (i.e., 27 persons). Where the frequency of Chuadanga and Narail district has the lowest (i.e., 3 persons) suicide rate. Besides Magura (i.e., 16 persons) gets the 2nd position. Kushtia and Jhenaidah (i.e., 11 persons) are in the 3rd position.
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Barisal -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="barisal_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Barisal Division. From the figure, Barisal district has a higher suicide rate than the other districts (i.e., 18 persons) where the frequency of Jhalokati district has the lowest (i.e., 2 persons) suicide rate.
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Chattagram -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="chattagram_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Chattagram Division. From the figure, Chattagram district has a higher suicide rate than the other districts (i.e., 25 persons) where the frequency of Cox's Bazar district has the lowest (i.e., 2 persons) suicide rate. It also shows that Comilla (i.e., 19 persons), Chandpur (i.e., 17 persons), Brahmanbaria (i.e., 15 persons) and Noakhali (i.e., 14 persons) also have the most number of suicidal cases.
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Mymensingh -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="mymensingh_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Mymensingh Division. From the figure, Mymensingh and Netrokona district has a higher suicide rate than the other districts (i.e., 23 persons) where the frequency of Sherpur district has the lowest (i.e., 8 persons) suicide rate.
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Rangpur -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="rangpur_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3" >
+														The figure represents the number of suicidal cases of Rangpur Division. From the figure, Thakurgaon district has a higher suicide rate than the other districts (i.e., 18 persons) where the frequency of Gaibandha and Panchagarh district has the lowest (i.e., 8 persons) suicide rate. Besides Nilphamari (i.e., 14 persons) gets the 2nd position. Dinajpur (i.e., 11 persons) is in the 3rd position.
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Sylhet -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="sylhet_district_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases of Syhlet Division. From the figure, Habiganj district has a higher suicide rate than the other districts (i.e., 20 persons) where the frequency of Sylhet district has the lowest (i.e., 17 persons) suicide rate.
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- profession -->
+					<div class="graph-holder">
+						<!-- Number of suicide case vs Profession group -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="profession_button"><span>Profession group vs
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down"
+									id="profession_icon"></i></div>
+						</div>
+						<div class="reason-graph-holder-x" id="profession_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="only-graph" id="profession_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different profession group. From the figure, we observe that student contributes the maximum number of fatality (i.e., 244 persons) where athlete has the lowest (i.e., 2 person) suicide rate.
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+
+
+					<!-- Different Human entity of suicide graph -->
+					<div class="graph-holder">
+						
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="entity_button"><span>Different human entity vs
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="entity_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="entity_graph_desc">
+							<div class="reason-graph-holder-child-dis">
+
+								<div class="district-tabs-holder">
+
+									<div class="district-tab selected-district-tab" id="religion_button">Religion</div>
+									<div class="district-tab" id="gender_button">Gender</div>
+									<div class="district-tab" id="age_button">Age</div>
+
+								</div>
+
+								<div class="district-slider-holder" id="entity_slider_holder">
+									<div class="district-slide-parent entity-slide-parent" id="entity_slider_parent">
+										
+										<!-- religion -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="religion_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents committing suicide of different religions. From the figure, we observe that Muslim contributes the maximum number of fatality (i.e., 646 persons) because majority of the people in Bangladesh are muslim (about 90.9\%) where buddhism has the lowest (i.e., 1 person) suicide rate.
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- gender -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="gender_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents committing suicide of different gender. From the figure, we observe the highest suicide rate from gender is found in female (i.e., 417 persons). Male (i.e., 341 persons) take second place and last is 3rd gender (i.e., 1 person).
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<!-- age -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="age_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents committing suicide of different ages. From the figure, we observe that teen (age&leq;25) contributes the maximum number of fatality (i.e., 375 persons) where old age group has the lowest (i.e., 29 persons) suicide rate.
+
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- Different Forecase vs suicide graph -->
+					<div class="graph-holder">
+						
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="forecast_button"><span>Different forecast vs
+									suicide</span>&nbsp;<i class="fad fa-arrow-alt-circle-down" id="forecast_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="forecast_graph_desc">
+							<div class="reason-graph-holder-child-dis">
+
+								<div class="district-tabs-holder">
+
+									<div class="district-tab selected-district-tab" id="time_button">Time</div>
+									<div class="district-tab" id="month_button">Month</div>
+									<div class="district-tab" id="weather_button">Weather</div>
+
+								</div>
+
+								<div class="district-slider-holder" id="forecast_slider_holder">
+									<div class="district-slide-parent entity-slide-parent" id="forecast_slider_parent">
+										
+										<!-- time -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="time_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases vs different times of a day. We divide a day into 5 time spans (i.e., morning, noon, afternoon, evening, night). Figure shows that, suicidal acts mostly happen at night (i.e., 228 persons) where in the afternoon, the frequency of suicidal cases is lowest (i.e., 38 persons).
+
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<!-- Month -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="month_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases vs different months of a year. We collect from april, 2020 to novembar, 2020. Figure shows that, in july most of the suicide happens (i.e., 138 persons). June (i.e., 127 persons) is the second most and then August (i.e., 121 persons) where the frequency of suicidal cases in April (i.e., 15 persons) is lowest.
+
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<!-- Weather -->
+										<div class="district-slide-page">
+											<div class="container-fluid">
+												<div class="row">
+													<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+														<div class="only-graph" id="weather_graph"></div>
+													</div>
+													<div class="reason-graph-description multi-graph-des col-sm-12 col-md-3 col-lg-3">
+														The figure represents the number of suicidal cases vs different weather groups. Figure shows that, in cloudy weather most of the suicide happens (i.e., 289 persons). Rainy weather (i.e., 209 persons) is the second most and then hazy weather (i.e., 149 persons) where the lowest frequency of suicidal cases is found in drizly weather (i.e., 8 persons).
+
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- Economic -->
+					<div class="graph-holder only-graph-last-child">
+						<!-- Number of suicide case vs economic group -->
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="economy_button">
+								<span>Different economy vs suicide</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="economy_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="economy_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="only-graph" id="economy_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different economy group. 
+											<br>
+											From the figure, we observe that middle class contributes the maximum number of fatality (i.e., 300 persons) where upper class has the lowest (i.e., 20 person) frequency of suicide.
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+
+					<!-- Comparison graphs -->
+					
+					<!-- reason gender -->
+					<div class="graph-holder comparison-graph-holder">
+						<div class="graph-title">
+							<div class="main-text">Comparison Graphs</div>
+						</div>
+						
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="rsn_gen_button">
+								<span>Comparison of Reason & Gender</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="rsn_gen_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="rsn_gen_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										
+										
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="col-sm-12 col-md-12 col-lg-12 toggle-row"><div class="toggle-butt" id="rsn_gen_toggle">Switch view</div></div>
+											<div class="only-graph" id="rsn_gen_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different gender compared to reason group. 
+											<br>
+											From the figure, we observe that male and female contribute the maximum number of fatality because of family issues such as: quarrels with family members, husband-wife issues, love issues, mental illness. Domestic violence issue is in the second position where females are the majority percent of victims compared to male.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- method gender -->
+					<div class="graph-holder comparison-graph-holder">
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="met_gen_button">
+								<span>Comparison of Method & Gender</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="met_gen_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="met_gen_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="col-sm-12 col-md-12 col-lg-12 toggle-row"><div class="toggle-butt" id="met_gen_toggle">Switch view</div></div>
+											<div class="only-graph" id="met_gen_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different method and gender group. 
+											<br>
+											From the figure, we observe that females contribute the maximum number of fatality compared to male with the hanging method. The frequency of suicidal cases is very low for the rest of the methods such as: jumping over, taking pills, cutting neck and so on.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- reason age -->
+					<div class="graph-holder comparison-graph-holder">
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="rsn_age_button">
+								<span>Comparison of Reason & Age</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="rsn_age_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="rsn_age_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="col-12 toggle-row"><div class="toggle-butt" id="rsn_age_toggle">Switch view</div></div>
+											<div class="only-graph" id="rsn_age_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different age group compared to reason group. 
+											<br>
+											From the figure, we observe that teenagers contribute the maximum number of fatalities because of the family issue where the suicidal rate of old age is very low. Because teen age have very low patience and they don't listen to their parents sometimes. The frequency of suicidal cases is very low for addiction.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- economy age -->
+					<div class="graph-holder comparison-graph-holder only-graph-last-child">
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="eco_age_button">
+								<span>Comp. of Economic condition & Age</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="eco_age_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="eco_age_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										
+										<div class="reason-graph-holder col-sm-12 col-md-9 col-lg-9">
+											<div class="col-12 toggle-row"><div class="toggle-butt" id="eco_age_toggle">Switch view</div></div>
+											<div class="only-graph" id="eco_age_graph"></div>
+										</div>
+										<div class="reason-graph-description single-graph-des col-sm-12 col-md-3 col-lg-3">
+											The figure represents committing suicide of different economic condition group and age group. 
+											<br>
+											From the figure, we observe that teenagers contribute the maximum number of fatalities compared to other age groups from middle class families. Because the middle class people cannot beg for help from others. The frequency of suicidal cases is very low for the upper class family. Because they have enough or sometimes more than enough assets to support their family.
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+					<!-- Cluster graphs -->
+					<div class="graph-holder cluster-graph-holder">
+						<div class="graph-title">
+							<div class="main-text">Cluster Graphs</div>
+						</div>
+						
+						<div class="graph-sub-title col-12">
+							<div class="reason-button" id="cluster_button">
+								<span>hierarchical clustering (Reason)</span>&nbsp;
+								<i class="fad fa-arrow-alt-circle-down" id="cluster_icon"></i>
+							</div>
+						</div>
+						<div class="reason-graph-holder-x" id="cluster_graph_desc">
+							<div class="reason-graph-holder-child">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="reason-graph-holder col-sm-12 col-md-12 col-lg-12">
+											<div class="only-graph" id="cluster_graph"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+
+			<div class="container-fluid about-part-container">
+				<div class="row about-part-row">
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title"><img src="{% static 'img/logo.png' %}" alt=""
+									height="27px" />&nbsp;Suicide
+								Prediction</div>
+
+							<div class="about-des">
+								There are many variations of passages of Lorem Ipsum available, but the majority have
+								suffered alteration in some form, by injected humour, or randomised words which don't
+								look even slightly believable.
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title"><i class="fas fa-info-circle"></i>Informations</div>
+
+							<div class="information-des">
+								<a href=""><i class="fad fa-circle-notch"></i>&nbsp;Terms & Conditions</a>
+							</div>
+
+							<div class="information-des">
+								<a href=""><i class="fad fa-circle-notch"></i>&nbsp;Privacy Policy</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-lg-4 about-parts">
+						<div class="about-box">
+							<div class="about-title contact-title"><i class="fas fa-address-book"></i>Contacts</div>
+
+							<div class="contact-des">
+								<i class="fas fa-map-marked-alt"></i>&nbsp;<div class="des-only">Address: United City,
+									Madani Avenue, Badda, Dhaka - 1212, Bangladesh</div>
+							</div>
+
+							<div class="contact-des">
+								<i class="fas fa-phone-square-alt fass"></i>&nbsp;<div class="des-only">Phone:
+									+8801756663521</div>
+							</div>
+
+							<div class="contact-des">
+								<i class="fas fa-envelope fass"></i>&nbsp;<div class="des-only">Email: example@gmail.com
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+				</div>
+
+			</div>
+
+			<div class="copyright-holder">
+				<div class="copyright-box">
+					Copyright ©2021 All rights reserved
+				</div>
+			</div>
+			
+			
+			<div id="chart_div"></div>
+			
+
+		</div>
+	</div>
+
+	<!-- {{reason_list|safe}} -->
+
+
+
+
+	<!-- JavaScript -->
+	<script type="text/javascript" src="{% static 'script/jquery-3.5.1.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/sweetalert.min.js' %}"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<!-- JavaScript custom-->
+	<script type="text/javascript" src="{% static 'script/only-navbar.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/result.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/result_entity.js' %}"></script>
+	<script type="text/javascript" src="{% static 'script/result_forecast.js' %}"></script>
+
+
+
+	<script>
+
+		$(document).ready(function () {
+
+			$("#logo_sec").on("click", function (e) {
+
+				window.location = "/";
+
+			});
+
+		});
+
+	</script>
+
+
+	<script type="text/javascript">
+
+		//drawing a side pie chart.................................................
+		var pie_chart_graph_data;
+		var pie_chart_graph_title="";
+		 
+		function draw_pie_chart(json_format, column_id, grp_drw_div){
+			pie_chart_graph_title = json_format[column_id+1][0];
+			var new_GR_data = [];
+			new_GR_data.push(['type', 'Suicide cases']);
+			for(var i=1;i<json_format[column_id+1].length;i++){
+				if(json_format[column_id+1][i] != 0){
+					new_GR_data.push([json_format[0][i], parseInt(json_format[column_id+1][i])]);
+				}
+			}
+			pie_chart_graph_data = new_GR_data;
+			<!-- console.log(new_GR_data); -->
+			google.charts.setOnLoadCallback(drawChart);
+		}
+		
+		//raw graph converter
+		function raw_graphValue_converter(json_format){
+		
+			<!-- console.log(json_format); -->
+			var new_Graphdata = [] ;
+			new_Graphdata.push(["suicide types","Suicide cases",{role: "style"}]);
+			<!-- console.log(new_Graphdata); -->
+			var val_arr=[];
+			for(var i=1;i<json_format.length;i++){
+				var total = 0;
+				for(var j=1;j<json_format[i].length;j++){
+					total = total + json_format[i][j];
+				}
+				val_arr.push(parseInt(total));
+				new_Graphdata.push([json_format[i][0],parseInt(total)]);
+				<!-- console.log(json_format[i]); -->
+			}
+			
+			//color correction
+			var max_ = Math.max.apply(null, val_arr);
+			var red_color="#E73109";
+			var blue_color ="#0982E7";
+			var green_color ="#0BE13B";
+			for(var i=1;i<new_Graphdata.length;i++){
+				if(new_Graphdata[i][1] == max_){
+					new_Graphdata[i][2] = red_color;
+				}
+				else{
+					new_Graphdata[i][2] = blue_color;
+				}
+			}
+			
+			<!-- console.log(new_Graphdata); -->
+			return new_Graphdata;
+			
+		}
+		
+		//start of pie chart graph.........................................................................................
+		google.charts.load("current", {packages:["corechart"]});
+		<!-- google.charts.setOnLoadCallback(drawChart); -->
+		function drawChart() {
+			var data = google.visualization.arrayToDataTable(pie_chart_graph_data);
+			
+			var options = {
+				title: pie_chart_graph_title,
+				titleTextStyle: { color: 'black', fontSize: 15 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Mate SC',
+				<!-- fontSize:20, -->
+				legend: {position: 'top', alignment:'left', maxLines:4, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+				pieSliceText: 'percentage', //value //label //percentage
+				<!-- sliceVisibilityThreshold: .2, -->
+				<!-- legend: {position: 'none'}, -->
+				<!-- colors:['red','#004411'], -->
+				
+				is3D: true,
+				backgroundColor:'#FFFAE4',
+				chartArea:{left:'2.5%',top:'10%',width:'95%',height:'95%'}
+			};
+
+			var chart = new google.visualization.PieChart(document.getElementById('reason_text'));
+			chart.draw(data, options);
+		}
+		//end of pie chart graph...........................................................................................
+		
+
+		//Different reason of suicide
+		var chart1;
+		var dataTable1;
+		var reason_graph_table = {{reason_list|safe}};
+		google.charts.setOnLoadCallback(reason_graph_draw);
+		<!-- google.load('visualization', '1.0', {'packages':['controls']}); -->
+		function reason_graph_draw() {
+			
+			var jsonData = raw_graphValue_converter(reason_graph_table);
+			var options = {
+				title: "Number of suicide case vs Reason group",
+				height: 550,
+				hAxis: {
+					title: 'Reason',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				legend: {position: 'none'},
+				bar: { groupWidth: '75%' },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				
+			};
+			
+			dataTable1 = new google.visualization.arrayToDataTable(jsonData);
+			chart1 = new google.visualization.ColumnChart(document.getElementById('reason_graph'));
+			google.visualization.events.addListener(chart1, 'select', selectHandler1);
+			chart1.draw(dataTable1, options);
+			
+			<!-- chart2 = new google.visualization.ColumnChart(document.getElementById("reason_graph")); -->
+			<!-- chart2.draw(view, options); -->
+	
+		}
+		
+		function selectHandler1() {
+			
+			var selection = chart1.getSelection();
+			if(selection.length == 0){
+				
+				document.getElementById("reason_text").style.height = 'auto';
+				document.getElementById("reason_text").innerHTML = "This figure represents different major reasons of committing suicide. From the figure, we observe that family reason contributes the maximum number of fatality (i.e., 292 persons) where addiction causes the lowest (i.e., 6 persons).";
+				
+				return;
+			}
+			for (var i = 0; i < selection.length; i++) {
+				var item = selection[i];
+				
+				<!-- console.log(rsn_col_selector); -->
+				document.getElementById("reason_text").style.height = '550px';
+				draw_pie_chart(reason_graph_table, item.row, 'reason_text');
+				<!-- console.log(item); -->
+				<!-- console.log(item.row); -->
+				<!-- if(item.row){ -->
+					<!-- console.log("ok"); -->
+				<!-- } -->
+				<!-- var selectedData = dataTable1.getValue(item.row, item.column); -->
+				<!-- var selectedLabel = dataTable1.getValue(item.row, 0); -->
+				<!-- console.log(selectedLabel, selectedData); -->
+			}
+		}
+		
+		
+		
+
+
+
+
+
+
+		//Different methods of suicide
+		var res_bar_color = "#2F76EA";
+		google.charts.setOnLoadCallback(method_graph_draw);
+
+		function method_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{method_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Different methods of suicide",
+				height: 550,
+				hAxis: {
+					title: 'Methods',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				
+			};
+			var chart = new google.visualization.ColumnChart(document.getElementById("method_graph"));
+			chart.draw(view, options);
+		}
+
+		//Different Area(Division) of suicide
+		var res_bar_color = "#2F76EA";
+		google.charts.setOnLoadCallback(division_graph_draw);
+
+		function division_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{division_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Different Area(Division) of suicide",
+				height: 550,
+				hAxis: {
+					title: 'Division',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+			var chart = new google.visualization.ColumnChart(document.getElementById("division_graph"));
+			chart.draw(view, options);
+		}
+
+
+		//Different District of suicide
+		var res_bar_color = "#2F76EA";
+
+		//Dhaka
+		google.charts.setOnLoadCallback(district_graph_draw_dha);
+		function district_graph_draw_dha() {
+			var data = google.visualization.arrayToDataTable({{dhaka_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Dhaka",
+				height: 550,
+				hAxis: {
+					title: 'Dhaka',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("dhaka_district_graph"));
+			chart.draw(view, options);
+
+		}
+
+		//rajshahi
+		google.charts.setOnLoadCallback(district_graph_draw_raj);
+		function district_graph_draw_raj() {
+			var data = google.visualization.arrayToDataTable({{rajshahi_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+			var options = {
+				title: "Number of suicide case vs Rajshahi",
+				height: 550,
+				hAxis: {
+					title: 'Rajshahi',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("rajshahi_district_graph"));
+			chart.draw(view, options);
+
+		}
+
+		//khulna
+		google.charts.setOnLoadCallback(district_graph_draw_khul);
+		function district_graph_draw_khul() {
+			var data = google.visualization.arrayToDataTable({{khulna_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Khulna",
+				height: 550,
+				hAxis: {
+					title: 'Khulna',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("khulna_district_graph"));
+			chart.draw(view, options);
+
+		}
+
+		//Barisal
+		google.charts.setOnLoadCallback(district_graph_draw_bar);
+		function district_graph_draw_bar() {
+			var data = google.visualization.arrayToDataTable({{barisal_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Barisal",
+				height: 550,
+				hAxis: {
+					title: 'Barisal',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("barisal_district_graph"));
+			chart.draw(view, options);
+		}
+
+
+		//Chattagram
+		google.charts.setOnLoadCallback(district_graph_draw_cha);
+		function district_graph_draw_cha() {
+			var data = google.visualization.arrayToDataTable({{chattagram_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Chattagram",
+				height: 550,
+				hAxis: {
+					title: 'Chattagram',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("chattagram_district_graph"));
+			chart.draw(view, options);
+		}
+
+		//Mymensingh
+		google.charts.setOnLoadCallback(district_graph_draw_mym);
+		function district_graph_draw_mym() {
+			var data = google.visualization.arrayToDataTable({{mymensingh_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Mymensingh",
+				height: 550,
+				hAxis: {
+					title: 'Mymensingh',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("mymensingh_district_graph"));
+			chart.draw(view, options);
+		}
+
+		//Rangpur
+		google.charts.setOnLoadCallback(district_graph_draw_ran);
+		function district_graph_draw_ran() {
+			var data = google.visualization.arrayToDataTable({{ranpur_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Rangpur",
+				height: 550,
+				hAxis: {
+					title: 'Rangpur',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("rangpur_district_graph"));
+			chart.draw(view, options);
+		}
+
+		//Sylhet
+		google.charts.setOnLoadCallback(district_graph_draw_syl);
+		function district_graph_draw_syl() {
+			var data = google.visualization.arrayToDataTable({{sylhet_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Sylhet",
+				height: 550,
+				hAxis: {
+					title: 'Sylhet',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("sylhet_district_graph"));
+			chart.draw(view, options);
+		}
+
+
+		//Profession...........................................................................
+		google.charts.setOnLoadCallback(profession_graph_draw);
+		function profession_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{profession_group_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Profession group",
+				height: 550,
+				hAxis: {
+					title: 'Profession',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("profession_graph"));
+			chart.draw(view, options);
+		}
+
+
+
+		//entity graphs ...........................................................................................
+
+		//Religion...........
+		google.charts.setOnLoadCallback(religion_graph_draw);
+		function religion_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{religion_group_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Religion group",
+				height: 550,
+				hAxis: {
+					title: 'Religion',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("religion_graph"));
+			chart.draw(view, options);
+		}
+		
+		//Gender...........
+		google.charts.setOnLoadCallback(gender_graph_draw);
+		function gender_graph_draw() {
+		
+			var temp = {{gender_list|safe}};
+			var json = [];
+			json.push(temp[0]);
+			var last_ind = temp.length-1;
+			for(last_ind;0 < last_ind;last_ind--){
+				json.push(temp[last_ind]);
+			}
+			
+			
+			var data = google.visualization.arrayToDataTable(json);
+			var view = new google.visualization.DataView(data);
+
+			var options = {
+				title: "Number of suicide case vs Gender group",
+				height: 550,
+				hAxis: {
+					title: 'Gender',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("gender_graph"));
+			chart.draw(view, options);
+		}
+
+		
+		//Age...........
+		google.charts.setOnLoadCallback(age_graph_draw);
+		function age_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{age_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Age group",
+				height: 550,
+				hAxis: {
+					title: 'Age',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("age_graph"));
+			chart.draw(view, options);
+		}
+
+		
+		
+		//forecast graphs ...........................................................................................
+		//Time...........
+		google.charts.setOnLoadCallback(time_graph_draw);
+		function time_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{time_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Time group",
+				height: 550,
+				hAxis: {
+					title: 'Time',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("time_graph"));
+			chart.draw(view, options);
+		}
+		
+		//Month...........
+		google.charts.setOnLoadCallback(month_graph_draw);
+		function month_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{month_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Month group",
+				height: 550,
+				hAxis: {
+					title: 'Month',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("month_graph"));
+			chart.draw(view, options);
+		}
+
+		//Weather...........
+		google.charts.setOnLoadCallback(weather_graph_draw);
+		function weather_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{weather_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Weather group",
+				height: 550,
+				hAxis: {
+					title: 'Weather',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("weather_graph"));
+			chart.draw(view, options);
+		}
+
+		
+		//Economy...........................................................................................
+		google.charts.setOnLoadCallback(economy_graph_draw);
+		function economy_graph_draw() {
+			var data = google.visualization.arrayToDataTable({{economic_list|safe}});
+
+			var view = new google.visualization.DataView(data);
+
+
+			var options = {
+				title: "Number of suicide case vs Economy group",
+				height: 550,
+				hAxis: {
+					title: 'Economy',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("economy_graph"));
+			chart.draw(view, options);
+		}
+
+		
+		
+		
+		
+		//Reason Gender ..........................................................................
+		google.charts.setOnLoadCallback(rsn_gen_graph_draw);
+		function rsn_gen_graph_draw() {
+		
+			var data = google.visualization.arrayToDataTable({{reason_vs_gender|safe}});
+
+			var view = new google.visualization.DataView(data);
+			var options = {
+				title: "Comparison of Reason & Gender",
+				height: 550,
+				hAxis: {
+					title: 'Reason',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				focusTarget: 'category',
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				isStacked:false,
+				legend: {position: 'top', alignment:'left', maxLines:1, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+			};
+
+			chart = new google.visualization.ColumnChart(document.getElementById("rsn_gen_graph"));
+			chart.draw(view, options);
+			
+			var toggle_button = document.getElementById('rsn_gen_toggle');
+			toggle_button.onclick = function (e) {
+
+				if(options.isStacked == true){
+				
+					options.isStacked = false;
+				}
+				else{
+					options.isStacked = true;
+				}
+				chart.draw(view, options);	
+			}
+			
+		}
+
+
+		//Method Gender ..........................................................................
+		google.charts.setOnLoadCallback(met_gen_graph_draw);
+		function met_gen_graph_draw() {
+		
+			var data = google.visualization.arrayToDataTable({{method_vs_gender|safe}});
+			var view = new google.visualization.DataView(data);
+			var options = {
+				title: "Comparison of Method & Gender",
+				height: 550,
+				hAxis: {
+					title: 'Method',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				focusTarget: 'category',
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				isStacked:false,
+				legend: {position: 'top', alignment:'left', maxLines:1, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("met_gen_graph"));
+			chart.draw(view, options);
+			
+			var toggle_button = document.getElementById('met_gen_toggle');
+			toggle_button.onclick = function (e) {
+
+				if(options.isStacked == true){
+				
+					options.isStacked = false;
+				}
+				else{
+					options.isStacked = true;
+				}
+				chart.draw(view, options);	
+			}
+			
+		}
+		
+		
+		//Reason Age ..........................................................................
+		google.charts.setOnLoadCallback(rsn_age_graph_draw);
+		function rsn_age_graph_draw() {
+		
+			var data = google.visualization.arrayToDataTable({{reason_vs_age|safe}});
+			var view = new google.visualization.DataView(data);
+			var options = {
+				title: "Comparison of Reason & Age",
+				height: 550,
+				hAxis: {
+					title: 'Reason',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				focusTarget: 'category',
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				isStacked:false,
+				legend: {position: 'top', alignment:'left', maxLines:1, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("rsn_age_graph"));
+			chart.draw(view, options);
+			
+			var toggle_button = document.getElementById('rsn_age_toggle');
+			toggle_button.onclick = function (e) {
+
+				if(options.isStacked == true){
+				
+					options.isStacked = false;
+				}
+				else{
+					options.isStacked = true;
+				}
+				chart.draw(view, options);	
+			}
+			
+		}
+
+		
+		//Economy Age ..........................................................................
+		google.charts.setOnLoadCallback(eco_age_graph_draw);
+		function eco_age_graph_draw() {
+		
+			var data = google.visualization.arrayToDataTable({{economic_vs_age|safe}});
+			var view = new google.visualization.DataView(data);
+			var options = {
+				title: "Comparison of Economic condition & Age",
+				height: 550,
+				hAxis: {
+					title: 'Economic condition',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				vAxis: {
+					title: 'Number of suicide cases',
+					titleTextStyle : {
+						fontSize: 13,
+						bold: true, 
+						<!-- color:'#200256', -->
+					}
+				},
+				bar: { groupWidth: "80%" },
+				legend: { position: "none" },
+				focusTarget: 'category',
+				titleTextStyle: { color: 'black',fontName: 'Mate SC', fontSize: 18 , alignment:'center'},
+				titlePosition: 'middle',
+				fontName:'Merriweather',
+				isStacked:false,
+				legend: {position: 'top', alignment:'left', maxLines:1, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+			};
+
+			var chart = new google.visualization.ColumnChart(document.getElementById("eco_age_graph"));
+			chart.draw(view, options);
+			
+			var toggle_button = document.getElementById('eco_age_toggle');
+			toggle_button.onclick = function (e) {
+
+				if(options.isStacked == true){
+				
+					options.isStacked = false;
+				}
+				else{
+					options.isStacked = true;
+				}
+				chart.draw(view, options);	
+			}
+			
+		}
+
+		
+		
+		
+		/*
+		google.charts.load('current', {packages: ['bar']});
+		google.charts.setOnLoadCallback(drawGraph);
+
+		var theChart;
+		var dataTable;
+
+		function drawGraph() {
+		  var jsonData = ([
+			["Something", "Else", "here"],
+			[8, 1, 0.25],
+			[9, 2, 0.5],
+			[10, 3, 1],
+			[11, 4, 2.25],
+			[12, 5, 2.25],
+			[13, 6, 3],
+			[14, 7, 3.25],
+			[15, 8, 5],
+			[16, 9, 6.5],
+			[17, 10, 10],
+		  ]);
+
+		  var options = {
+		  
+			focusTarget: 'category',
+
+			title: 'comparison 1',
+			titleTextStyle: { color: 'green', fontSize: 18 , alignment:'center'},
+			titlePosition: 'middle',
+			fontName:'Mate SC',
+			<!-- fontSize:20, -->
+			legend: {position: 'top', alignment:'left', maxLines:2, textStyle: {fontName:'Merriweather' ,color: 'black', fontSize: 11}},
+			height: 550,
+			<!-- bars: 'horizontal', -->
+			
+		  };
+		  
+		  dataTable = new google.visualization.arrayToDataTable(jsonData);
+		  theChart = new google.visualization.ColumnChart(document.getElementById('compar1_graph'));
+		  google.visualization.events.addListener(theChart, 'select', selectHandler);
+		  theChart.draw(dataTable, options);
+		}
+
+		function selectHandler() {
+		  var selection = theChart.getSelection();
+		  if(selection.length > 1){
+			return;
+		  }
+		  for (var i = 0; i < selection.length; i++) {
+			var item = selection[i];
+			<!-- console.log(item) -->
+			if(item.row == 2){
+				console.log("ok");
+			}
+			var selectedData = dataTable.getValue(item.row, item.column);
+			var selectedLabel = dataTable.getValue(item.row, 0);
+			<!-- console.log(selectedLabel, selectedData); -->
+		  }
+		}
+		*/
+		
+		
+		
+		
+		var clusgrp_width = ($(window).width()*0.95);
+		if(clusgrp_width > 1288){
+			clusgrp_width = 1288;
+		}
+		
+		var clusgrp_height = $(window).height()*1;
+		if(clusgrp_height > 625){
+			clusgrp_height = 625;
+		}
+		
+		google.charts.load("current", {packages:["sankey"]});
+		google.charts.setOnLoadCallback(cluster_graph_draw);
+		function cluster_graph_draw() {
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'From');
+			data.addColumn('string', 'To');
+			data.addColumn('number', 'Weight');
+			data.addRows({{the_cluster|safe}});
+
+			// Set chart options
+			var options = {
+				width: clusgrp_width,
+				height: clusgrp_height,
+				
+				sankey: {
+				
+					node: { label: { fontName: 'Times-Roman',
+							 <!-- fontSize: 13, -->
+							 <!-- color: '#871b47', -->
+							 bold: true,
+							 <!-- italic: true  -->
+							 },
+							<!-- colorMode:'unique', -->
+							<!-- labelPadding: 50, -->
+							<!-- width: 2, -->
+							<!-- nodePadding: 15, -->
+						 },
+				
+				link: {
+				  colorMode: 'gradient',
+				},
+			  },
+			  tooltip:{textStyle: {color: '#FF0000'}, showColorCode: true, }
+			};
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.Sankey(document.getElementById('cluster_graph'));
+			chart.draw(data, options);
+		   }
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+	
+	<!-- {{test_data_list}} -->
+
+
+	<script type="text/javascript">
+
+		function reportWindowSize() {
+			<!-- console.log("window changed"); -->
+			
+			setTimeout(function(){
+				graph_correction();
+			}, 200);
+		}
+
+		window.onresize = reportWindowSize;
+		
+		
+		function graph_correction(){
+		
+			<!-- google.charts.setOnLoadCallback(reason_graph_draw); -->
+			<!-- google.charts.setOnLoadCallback(method_graph_draw); -->
+			<!-- google.charts.setOnLoadCallback(division_graph_draw); -->
+			
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_dha); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_raj); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_khul); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_bar); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_cha); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_mym); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_ran); -->
+			<!-- google.charts.setOnLoadCallback(district_graph_draw_syl); -->
+			
+			<!-- google.charts.setOnLoadCallback(profession_graph_draw); -->
+			
+			<!-- google.charts.setOnLoadCallback(religion_graph_draw); -->
+			<!-- google.charts.setOnLoadCallback(gender_graph_draw); -->
+			<!-- google.charts.setOnLoadCallback(age_graph_draw); -->
+			
+			
+			
+		}
+		
+		
+		
+	</script>
+
+
+
+	<!-- 
+    <script>
+		//prevent source code view
+		$(document).bind("contextmenu",function(e) {
+			e.preventDefault();
+		});
+		document.onkeydown = function (e) {
+			if (event.keyCode == 123) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+				return false;
+			}
+			if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+				return false;
+			}
+		}
+	</script> 
+	-->
+
+</body>
+
+</html>
