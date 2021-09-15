@@ -1,5 +1,5 @@
 # Suicide-Prevention
- This is an application to showcase our thiesis project. (Completed 2021)
+ This is an application to showcase our thesis project. (Completed 2021)
 
 This project showcase our thesis results that we done for suicide prevention. This project is based on suicide happend during this pendemic. Throughout this project we showcase all the results that we have got using different Machine learning methods.
 
@@ -16,7 +16,7 @@ Year: 2021
 
 ## Results:
 <ul> 
-    <li>Word Cloud (User status, Bangla & English news article)</li>
+    <li>WordCloud (User status, Bangla & English news article)</li>
     <li>Different reasons of suicide.</li>
     <li>Different methods of suicide.</li>
     <li>Different area (Division) of suicide.</li>
@@ -51,7 +51,7 @@ Year: 2021
 ### Results
 <img src="demo/4.png" alt="Results" width="800"/>
 
-### Word Cloud (user status)
+### WordCloud (user status)
 <img src="demo/5.png" alt="status" width="800"/>
 
 ### Reason
