@@ -4,6 +4,7 @@
 This project showcase our thesis results that we done for suicide prevention. This project is based on suicide happend during this pendemic. Throughout this project we showcase all the results that we have got using different Machine learning methods.
 
 Here is the live link : [@suicideanalytics](https://suicideanalytics.sociocognitive.com/result)
+Also check : [@socioCognitive](https://sociocognitive.com/)
 
  ## Project description
 Name: Suicide-Prevention <br>
