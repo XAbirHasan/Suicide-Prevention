@@ -34,7 +34,7 @@ Year: 2021
 
 
 ## Demo Video
-<!-- [![IMAGE ALT TEXT](http://img.youtube.com/vi/dIQwkALpu0g/0.jpg)](http://www.youtube.com/watch?v=dIQwkALpu0g "Suicide-Prevention || Cognitive date science") -->
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/BCk66EVfuVA/0.jpg)](http://www.youtube.com/watch?v=BCk66EVfuVA "Suicide-Prevention || Cognitive date science")
 
 ## Screen shot
 
